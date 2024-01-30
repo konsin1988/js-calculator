@@ -1,0 +1,22 @@
+{
+  "name": "minin_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konsin1988/simple-calculator-with-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konsin1988/simple-calculator-with-js/issues"
+  },
+  "homepage": "https://github.com/konsin1988/js-calculator.git",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}

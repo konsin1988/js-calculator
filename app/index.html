@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="title">
+      <h1>Calculator</h1>
+    </div>
+
+    <div class="container">
+      <div class="chbox">
+        <input id="add" type="radio" name="op" checked />
+        <input id="sub" type="radio" name="op" />
+        <input id="mult" type="radio" name="op" />
+        <input id="div" type="radio" name="op" />
+        <div class="add_sub">
+          <label for="add"
+            ><img class="icon" src="./img/add.png" alt=""
+          /></label>
+          <label for="sub"
+            ><img class="icon" src="./img/sub.png" alt=""
+          /></label>
+        </div>
+        <div class="mul_div">
+          <label for="mult"
+            ><img class="icon" src="./img/mult.png" alt=""
+          /></label>
+          <label for="div"
+            ><img class="icon" src="./img/div.png" alt=""
+          /></label>
+        </div>
+      </div>
+      <div class="box">
+        <div class="horisontal"></div>
+        <div class="vertical">
+          <input type="text" id="num1" />
+          <input type="text" id="num2" />
+          <input type="button" value="Calculate" />
+          <input type="text" id="result" value="100" />
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

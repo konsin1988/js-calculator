@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: grey;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container {
+  width: 500px;
+  height: 500px;
+}
+.container .chbox {
+  display: flex;
+  justify-content: center;
+}
+.container .box {
+  position: relative;
+  width: 70%;
+  height: 70%;
+  margin: 15%;
+  background: green;
+  border-radius: 20px;
+}
+
+.box .horisontal {
+  position: absolute;
+  height: 50%;
+  width: 130%;
+  left: -15%;
+  top: 25%;
+  background: violet;
+  border-radius: 20px;
+}
+.box .vertical {
+  position: absolute;
+  background: violet;
+  width: 50%;
+  height: 130%;
+  top: -15%;
+  left: 25%;
+  border-radius: 20px;
+}
+.container .mul_div {
+  position: absolute;
+  width: 200px;
+  height: 440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  /* background: blue; */
+  margin: 30px;
+  padding: 20px;
+}
+.container .add_sub {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  /* background: red; */
+  margin: 30px;
+  padding: 20px;
+}
+.container label {
+  opacity: 0.25;
+}
+.icon {
+  width: 80px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  background: green;
+  /* opacity: 0.25; */
+  padding: 2px;
+  cursor: pointer;
+}
+.mul_div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  margin: 10%;
+}
+.chbox input {
+  appearance: none;
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  .container {
+    width: 80vw;
+    height: 80vw;
+  }
+  .container .add_sub {
+    width: 65vw;
+    height: 65vw;
+    margin: 7.5%;
+    padding: 0;
+  }
+  .container .mul_div {
+    width: 30vw;
+    height: 65vw;
+    margin: 7.5%;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .icon {
+    width: 50px;
+  }
+}
+
+input:nth-child(1):checked ~ .add_sub label:nth-child(1),
+input:nth-child(2):checked ~ .add_sub label:nth-child(2),
+input:nth-child(3):checked ~ .mul_div label:nth-child(1),
+input:nth-child(4):checked ~ .mul_div label:nth-child(2) {
+  opacity: 1;
+}

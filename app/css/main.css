@@ -11,7 +11,7 @@ body {
   display: flex;
   width: 100vw;
   height: 100vh;
-  background: grey;
+  background: rgb(35, 31, 31);
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -35,6 +35,44 @@ body {
   justify-content: center;
   align-items: center;
 }
+.container .box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #0f0,
+    #ff0,
+    #0ff,
+    #f0f,
+    #0ff
+  );
+  animation: rotating 4s linear infinite;
+}
+.container .box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #0f0,
+    #ff0,
+    #0ff,
+    #f0f,
+    #0ff
+  );
+  animation: rotating 4s linear infinite;
+  filter: blur(40px);
+}
+.box span {
+  position: absolute;
+  inset: 4px;
+  background: #222;
+  border-radius: 16px;
+  z-index: 1;
+}
 
 .box .horisontal {
   position: absolute;
@@ -42,12 +80,28 @@ body {
   width: 130%;
   left: -15%;
   top: 25%;
-  background: violet;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #0f0,
+    #ff0,
+    #0ff,
+    #f0f,
+    #0ff
+  );
+  animation: rotating 4s linear infinite;
   border-radius: 20px;
 }
 .box .vertical {
   position: absolute;
-  background: violet;
+  background: repeating-conic-gradient(
+    from var(--a),
+    #0f0,
+    #ff0,
+    #0ff,
+    #f0f,
+    #0ff
+  );
+  animation: rotating 4s linear infinite;
   width: 50%;
   height: 130%;
   top: -15%;
@@ -82,17 +136,71 @@ body {
   padding: 20px;
 }
 .container label {
-  opacity: 0.25;
+  filter: blur(1px);
+}
+.container label:hover {
+  filter: blur(0px);
 }
 .icon {
   width: 80px;
-  border: 2px solid rgb(68, 68, 68);
+  border: 3px solid rgba(105, 25, 25, 0.682);
   border-radius: 50%;
-  background: rgb(92, 92, 92);
-  /* opacity: 0.25; */
+  background: rgba(238, 77, 77, 0.473);
   padding: 2px;
   cursor: pointer;
+  text-shadow: 4px 4px 10px 0 green;
 }
+img {
+  box-shadow: 4px 4px 10px 0 red;
+}
+.icon:hover {
+  background: white;
+  transition: 1s;
+  animation: scaling 1s forwards;
+  border: none;
+  box-shadow: 5px 5px 6px 0 red;
+}
+.icon:active {
+  animation: activity 1s linear;
+  background: #fff;
+  transition: 2s;
+}
+@property --a {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes rotating {
+  0% {
+    --a: 0deg;
+  }
+  100% {
+    --a: 360deg;
+  }
+}
+@keyframes scaling {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+@keyframes activity {
+  0% {
+    background: #ffffff63;
+  }
+  25% {
+    background: #fff;
+  }
+  75% {
+    background: #fff;
+  }
+  100% {
+    background: #ffffff7d;
+  }
+}
+
 .mul_div {
   display: flex;
   flex-direction: column;
@@ -140,7 +248,7 @@ input:nth-child(1):checked ~ .add_sub label:nth-child(1),
 input:nth-child(2):checked ~ .add_sub label:nth-child(2),
 input:nth-child(3):checked ~ .mul_div label:nth-child(1),
 input:nth-child(4):checked ~ .mul_div label:nth-child(2) {
-  opacity: 1;
+  filter: blur(0.1px);
 }
 .container .numbers {
   position: absolute;
@@ -152,10 +260,35 @@ input:nth-child(4):checked ~ .mul_div label:nth-child(2) {
 }
 
 .numbers input {
-  background: red;
+  background: rgba(194, 57, 57, 0.747);
   border-radius: 20px;
   margin: 10px;
   text-align: center;
   font-size: 1.2em;
   width: 160px;
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(126, 2, 2, 0.575);
+}
+
+.numbers input:hover::placeholder {
+  opacity: 0.2;
+}
+.numbers input:hover {
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.575);
+  background: #fff;
+  transition: 0.5s;
+  transform: scale(1.1);
+  color: black;
+}
+.numbers input:active {
+  animation: inputhover 1s linear forwards;
+}
+@keyframes inputhover {
+  0% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1.1);
+    background: #fff;
+  }
 }

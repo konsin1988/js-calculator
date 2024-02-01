@@ -31,6 +31,9 @@ body {
   margin: 15%;
   background: green;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .box .horisontal {
@@ -50,6 +53,9 @@ body {
   top: -15%;
   left: 25%;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .container .mul_div {
   position: absolute;
@@ -80,9 +86,9 @@ body {
 }
 .icon {
   width: 80px;
-  border: 2px solid orange;
+  border: 2px solid rgb(68, 68, 68);
   border-radius: 50%;
-  background: green;
+  background: rgb(92, 92, 92);
   /* opacity: 0.25; */
   padding: 2px;
   cursor: pointer;
@@ -116,10 +122,17 @@ body {
     margin: 7.5%;
     padding: 0;
   }
+  .container .numbers input {
+    width: 30vw;
+  }
 }
 @media screen and (max-width: 600px) {
   .icon {
-    width: 50px;
+    width: 55px;
+  }
+  .container .numbers input {
+    font-size: 1em;
+    margin: 10px;
   }
 }
 
@@ -128,4 +141,21 @@ input:nth-child(2):checked ~ .add_sub label:nth-child(2),
 input:nth-child(3):checked ~ .mul_div label:nth-child(1),
 input:nth-child(4):checked ~ .mul_div label:nth-child(2) {
   opacity: 1;
+}
+.container .numbers {
+  position: absolute;
+  height: 150px;
+  z-index: 100;
+  /* background: green; */
+  display: flex;
+  flex-direction: column;
+}
+
+.numbers input {
+  background: red;
+  border-radius: 20px;
+  margin: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  width: 160px;
 }

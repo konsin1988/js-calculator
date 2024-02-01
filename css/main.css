@@ -16,6 +16,11 @@ body {
   align-items: center;
   flex-direction: column;
 }
+h1 {
+  color: #fff;
+  text-shadow: 5px 5px 10px red;
+  font-size: 4em;
+}
 .container {
   width: 500px;
   height: 500px;
@@ -121,7 +126,7 @@ body {
   z-index: 10;
   /* background: blue; */
   margin: 30px;
-  padding: 20px;
+  padding: 30px;
 }
 .container .add_sub {
   position: absolute;
@@ -133,7 +138,7 @@ body {
   z-index: 10;
   /* background: red; */
   margin: 30px;
-  padding: 20px;
+  padding: 30px;
 }
 .container label {
   filter: blur(1px);
@@ -230,6 +235,7 @@ img {
     margin: 7.5%;
     padding: 0;
   }
+  .container .numbers .info,
   .container .numbers input {
     width: 30vw;
   }
@@ -238,6 +244,7 @@ img {
   .icon {
     width: 55px;
   }
+  .container .numbers .info,
   .container .numbers input {
     font-size: 1em;
     margin: 10px;
@@ -259,6 +266,7 @@ input:nth-child(4):checked ~ .mul_div label:nth-child(2) {
   flex-direction: column;
 }
 
+.numbers .info,
 .numbers input {
   background: rgba(194, 57, 57, 0.747);
   border-radius: 20px;
@@ -270,9 +278,11 @@ input:nth-child(4):checked ~ .mul_div label:nth-child(2) {
   text-shadow: 2px 2px 3px rgba(126, 2, 2, 0.575);
 }
 
+.numbers .info:hover::placeholder,
 .numbers input:hover::placeholder {
   opacity: 0.2;
 }
+.numbers .info:hover,
 .numbers input:hover {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.575);
   background: #fff;
@@ -280,6 +290,7 @@ input:nth-child(4):checked ~ .mul_div label:nth-child(2) {
   transform: scale(1.1);
   color: black;
 }
+.numbers .info:active,
 .numbers input:active {
   animation: inputhover 1s linear forwards;
 }

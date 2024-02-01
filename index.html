@@ -6,6 +6,7 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="./css/main.css" />
     <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+    <script src="./js/app.js" defer></script>
   </head>
   <body>
     <div class="title">
@@ -37,10 +38,19 @@
       <div class="box">
         <span></span>
         <div class="numbers">
-          <input type="text" id="num1" placeholder="Enter number 1" />
-          <input type="text" id="num2" placeholder="Enter number 2" />
-
-          <input type="text" id="result" placeholder="result" />
+          <input
+            type="text"
+            id="num1"
+            class="info"
+            placeholder="Enter number 1"
+          />
+          <input
+            type="text"
+            id="num2"
+            class="info"
+            placeholder="Enter number 2"
+          />
+          <p id="result" class="info">Result</p>
         </div>
         <div class="horisontal">
           <span></span>
